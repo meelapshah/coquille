@@ -148,7 +148,7 @@ class BufferState(object):
 
     def goto_last_sent_dot(self):
         last = self.coq_top.get_last_active_command()
-        (line, col) = ((0,1) if not last else last.end)
+        (line, col, _) = ((0,1,0) if not last else last.end)
         vim.current.window.cursor = (line + 1, col)
 
     def coq_rewind(self, steps=1):
