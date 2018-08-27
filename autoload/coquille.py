@@ -103,7 +103,7 @@ class BufferState(object):
         "Updates python member variables based on the vim variables"
         if not self.source_buffer.valid:
             return False
-        if self.source_buffer.options["filetype"] != b"coq":
+        if self.source_buffer.options["filetype"] != "coq":
             return False
         goal_bufid = self.source_buffer.vars.get("coquille_goal_bufid", -1)
         if goal_bufid != -1:
